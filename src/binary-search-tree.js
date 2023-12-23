@@ -40,14 +40,24 @@ class BinarySearchTree {
     }
   }
 
-  has(/* data */) {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+  has(v, isHas = true) {
+    if (!this.rootNode) return isHas ? false : null;
+    let node = this.rootNode;
+    while (true) {
+      if (node.data === v) return isHas ? true : node;
+      if (node.data > v) {
+        if (!node.left) return isHas ? false : null;
+        node = node.left;
+        continue;
+      }
+      if (!node.right) return isHas ? false : null;
+      node = node.right;
+      continue;
+    }
   }
 
-  find(/* data */) {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+  find(v) {
+    return this.has(v, false);
   }
 
   remove(/* data */) {
