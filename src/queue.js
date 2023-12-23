@@ -19,12 +19,11 @@ class Queue {
   head = null;
 
   getUnderlyingList() {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+    return this.head;
   }
 
   enqueue(value) {
-    const newNode = new ListNode(value);
+    const newNode = new ListNode(value, null);
 
     if (!this.head) this.head = this.tail = newNode;
     else {
