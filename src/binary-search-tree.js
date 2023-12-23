@@ -65,14 +65,14 @@ class BinarySearchTree {
     // remove line with error and write your code here
   }
 
-  min() {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+  min(node = this.rootNode) {
+    if (node.left) return this.min(node.left);
+    return node.data;
   }
 
-  max() {
-    throw new NotImplementedError("Not implemented");
-    // remove line with error and write your code here
+  max(node = this.rootNode) {
+    if (node.right) return this.max(node.right);
+    return node.data;
   }
 }
 
